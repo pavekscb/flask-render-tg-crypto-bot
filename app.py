@@ -42,7 +42,7 @@ def notify():
 
             # Формирование текстовой строки
             #message = f'*Перевод токена:*\n{txhash}\nс {from_address} \nна {to_address}: \nзначение: {value} *{token_symbol}* {token_address}'
-             message = f'*Перевод токена: {token_symbol}*'
+             message = f'*Перевод токена:*\n{txhash}\nс {value} *{token_symbol}* {token_address}'
             bot.send_message(chat_id=user_chat_id, text=message, parse_mode='MarkdownV2')  # Отправка сообщения в чат с использованием Telegram бота
 
     return Response(status=200)  # Возвращение HTTP-ответа со статусом 200
