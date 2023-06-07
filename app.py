@@ -1,14 +1,12 @@
-import os  # Импорт модуля os для работы с операционной системой
-from flask import Flask, request, Response  # Импорт классов Flask, request и Response из модуля flask для создания веб-приложения и обработки HTTP-запросов
-from telegram import Update, Bot  # Импорт классов Update и Bot из модуля telegram для работы с Telegram API
-from telegram.ext import Updater, CommandHandler, CallbackContext  # Импорт классов Updater, CommandHandler и CallbackContext из модуля telegram.ext для создания и настройки Telegram бота
+import os
+from flask import Flask, request, Response
+from telegram import Bot
 
-app = Flask(__name__)  # Создание экземпляра приложения Flask
+app = Flask(__name__)
 
-# Устанавливаем настройки для Telegram бота
-TELEGRAM_API_TOKEN = os.environ['BOT_TOKEN']  # Получение токена Telegram бота из переменной окружения
-bot = Bot(TELEGRAM_API_TOKEN)  # Создание экземпляра Telegram бота
-user_chat_id = os.environ['CHANNEL_ID']  # Получение идентификатора чата из переменной окружения
+TELEGRAM_API_TOKEN = os.environ['BOT_TOKEN']
+bot = Bot(TELEGRAM_API_TOKEN)
+user_chat_id = os.environ['CHANNEL_ID']
 
 @app.route('/')
 def hello():
